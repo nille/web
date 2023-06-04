@@ -10,20 +10,22 @@
     <!-- css -->
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/app.css' | url }}">
 
     <!-- js -->
-    <script src="/js/alpine.js?v={% version %}" defer></script>
+    <script src="/js/app.js?v={% version %}" defer></script>
 
     <title>{{site.name}}{% if title %} - {{title}} {% endif %}</title>
 </head>
-<body>
+<body class="bg-gradient-to-t from-rose-100 to-teal-100 flex flex-col min-h-screen">
 
-{% include "partials/_header.njk" %}
+{% include "_header.njk" %}
 
-{{content | safe}}
+<div class="container mx-auto md:mt-10 sm:mt-36">
+    {{content | safe}}
+</div>
 
-{% include "partials/_footer.njk" %}
+{% include "_footer.njk" %}
 
 </body>
 </html>

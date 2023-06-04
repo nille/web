@@ -1,0 +1,5 @@
+@import './tailwind.css';
+@import'./synthwave_84.css';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Rubik:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+[x-cloak] { display: none !important; }
