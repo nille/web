@@ -1,0 +1,49 @@
+<div class="hidden md:block w-screen p-8 fixed">
+    <div class="flex justify-center align-middle h-full">
+        <div class="flex items-center gap-x-12">
+            {% for item in collections.page %}
+                {%  if item.url == page.url %}
+                    <a href="{{ item.url }}" aria-current="page" data-state="active" class="text-4xl tracking-tight font-black leading-10 text-gray-900 border-b-2 border-black">{{ item.data.title }}</a>
+                {% else %}
+                    <a href="{{ item.url }}" class="text-4xl tracking-tight font-extrabold leading-10 text-gray-800 border-b-2 border-transparent hover:border-black">{{ item.data.title }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="md:hidden w-screen fixed">
+    <div x-data="{ open: false }" :class="open ? 'bg-white' : 'bg-none'">
+        <div class="flex justify-end p-8">
+            <button x-show="!open" @click="open = ! open"type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            <button x-show="open" @click="open = ! open" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div x-show="open"
+             @click="open = ! open"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             class="flex flex-col p-4 shadow-xl">
+            {% for item in collections.page %}
+                <div class="text-center py-4">
+                    {%  if item.url == page.url %}
+                        <a href="{{ item.url }}" aria-current="page" data-state="active" class="text-4xl tracking-tight font-black leading-10 text-gray-900 border-b-2 border-black">{{ item.data.title }}</a>
+                    {% else %}
+                        <a href="{{ item.url }}" class="text-4xl tracking-tight font-extrabold leading-10 text-gray-800">{{ item.data.title }}</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
