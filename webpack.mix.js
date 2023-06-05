@@ -5,4 +5,5 @@ mix.copy('src/assets/images', 'dist/images')
     .postCss('src/assets/css/app.css', 'dist/css', [
         require('tailwindcss')
     ]
+    .disableSuccessNotifications()
 );
