@@ -3,3 +3,4 @@
 .envrc
 .cache
 .idea
+mix-manifest.json
