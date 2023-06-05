@@ -12,7 +12,7 @@
             {%  if item.url == page.url %}
                 <span class="text-4xl tracking-tight font-black leading-10 text-gray-900 border-b-2 border-black"><a href="{{ item.url }}" aria-current="page" data-state="active">{{ item.data.title }}</a></span>
             {% else %}
-                <span class="text-4xl tracking-tight font-extrabold leading-10 text-gray-800 border-b-2 border-transparent hover:border-black"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
+                <span class="text-4xl tracking-tight font-black leading-10 text-gray-800 border-b-2 border-transparent hover:border-black"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
             {% endif %}
         {% endfor %}
     </div>
@@ -51,7 +51,7 @@
                     {%  if item.url == page.url %}
                         <a href="{{ item.url }}" aria-current="page" data-state="active" class="text-4xl tracking-tight font-black leading-10 text-gray-900 border-b-2 border-black">{{ item.data.title }}</a>
                     {% else %}
-                        <a href="{{ item.url }}" class="text-4xl tracking-tight font-black leading-10 text-gray-800">{{ item.data.title }}</a>
+                        <a href="{{ item.url }}" class="text-4xl tracking-tight font-extrabold leading-10 text-gray-800">{{ item.data.title }}</a>
                     {% endif %}
                 </div>
             {% endfor %}
