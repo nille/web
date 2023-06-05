@@ -4,19 +4,16 @@
         <img class="w-auto h-24" src="/images/nilledev-logo.png" alt="nille.dev logo">
     </a>
 </div>
-
 <div class="hidden md:flex p-2 w-screen justify-center">
-
     <div class="space-x-6">
         {% for item in collections.page %}
             {%  if item.url == page.url %}
                 <span class="text-4xl tracking-tight font-black leading-10 text-gray-900 border-b-2 border-black"><a href="{{ item.url }}" aria-current="page" data-state="active">{{ item.data.title }}</a></span>
             {% else %}
-                <span class="text-4xl tracking-tight font-black leading-10 text-gray-800 border-b-2 border-transparent hover:border-black"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
+                <span class="text-4xl tracking-tight font-extrabold leading-10 text-gray-800 border-b-2 border-transparent hover:border-black"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
             {% endif %}
         {% endfor %}
     </div>
-
 </div>
 <!-- regular nav, end -->
 
