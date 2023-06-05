@@ -13,9 +13,9 @@ order: 2
             <div class="flex flex-1 flex-col justify-between bg-white p-6">
                 <div class="flex-1">
                     {%- for topic in collections.post.topics -%}
-                    <p class="text-sm font-medium text-indigo-600">
-                        <a href="#" class="hover:underline">{{ topic.data }}</a>
-                    </p>
+                        <p class="text-sm font-medium text-indigo-600">
+                            <a href="#" class="hover:underline">{{ topic.data }}</a>
+                        </p>
                     {%- endfor -%}
                     <a href="#" class="mt-2 block">
                         <p class="text-xl font-semibold text-gray-900">{{ post.data.title }}</p>
@@ -44,3 +44,4 @@ order: 2
         </div>
     {%- endfor -%}
 </div>
+
